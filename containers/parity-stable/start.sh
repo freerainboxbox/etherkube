@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Points to devnet, not classic.
+# TODO: Configure for Aura, eventually add Clique when released
 if [ -z "$NODE_OPTIONS" ]; then
     NODE_OPTIONS="--chain dev --cache-size 512 --cache-size-db 4095"
 fi
