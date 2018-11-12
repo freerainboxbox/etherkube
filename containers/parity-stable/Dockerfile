@@ -5,10 +5,10 @@ RUN apt-get update && apt-get -y install wget
 ENV PARITY_VERSION 1.4.12
 
 RUN mkdir /opt/parity
-RUN wget http://d1h4xl4cr1h0mo.cloudfront.net/v${PARITY_VERSION}/x86_64-unknown-linux-gnu/parity_${PARITY_VERSION}_amd64.deb -O /opt/parity/parity_${PARITY_VERSION}_amd64.deb
-RUN cp /opt/parity/parity_${PARITY_VERSION}_amd64.deb /var/cache/apt/archives/parity_${PARITY_VERSION}_amd64.deb
-RUN dpkg -i /opt/parity/parity_${PARITY_VERSION}_amd64.deb
+RUN wget https://releases.parity.io/v2.1.4/x86_64-unknown-linux-gnu/parity
 
+RUN mkdir -p /opt/parity/
+COPY parity /usr/parity
 COPY start.sh /opt/parity/start.sh
 RUN chmod +x /opt/parity/start.sh
 
